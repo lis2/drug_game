@@ -24,7 +24,7 @@ module DrugGame
     end
 
     def jump
-      @vy = -20 if @map.solid?(@x, @y, @height)
+      @vy = -20 if @map.solid?(@x, @y + 1, @height)
     end
 
     def would_fit(offs_x, offs_y)
