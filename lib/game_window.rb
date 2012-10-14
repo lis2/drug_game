@@ -23,7 +23,7 @@ module DrugGame
       @player = DrugGame::Player.new(self)
       @player.warp(100, 400 - @player.height / 2)
 
-      @camera_x = @camera_y = 0, -500
+      @camera_x = @camera_y = 0, (self.height - @map.height)
 
       @awards = Array.new
       @monsters = Array.new
@@ -62,15 +62,14 @@ module DrugGame
     end
 
     def set_camera
-      @camera_x = [[@player.x - 640, 0].max, @map.width - 1280].min
-      @camera_y = [[@player.y - 350, 0].max, @map.height - 700].max
-      @camera_y = -[[350 - @player.y, 0].max, 350].min
+      @camera_x = [[@player.x - self.width/2, 0].max, @map.width - self.width].min
+      @camera_y = -[[@height/2 - @player.y, 0].max, height/2].min
     end
 
     def draw
       translate(-@camera_x, -@camera_y) do
         @player.draw
-        @background_image.draw(0, -500, 0)
+        @background_image.draw(0, (self.height - @map.height), 0)
         @map.draw
 
         @awards.each { |award| award.draw }

@@ -21,7 +21,7 @@ module DrugGame
     def set_position
       @x = rand * @window.map.width - 100
       @y = rand * @window.map.height
-      @y = 660 if @y > 660
+      @y = (@window.height - @height/2 - 10) if @y > (@window.height - @height/2 - 10)
     end
 
     def move

@@ -16,11 +16,11 @@ describe DrugGame::Map do
 
   it "platform should exists" do
     @platforms = [[100, 100]]
-    @map.solid?(100, 60 ,80).should be_true
+    @map.platform?(100, 60 ,80).should be_true
   end
 
   it "platform should be solid" do
     @platforms = [[100, 100]]
-    @map.platform?(100, 60 ,80).should be_true
+    @map.solid?(100, 60 ,80).should be_true
   end
 end
