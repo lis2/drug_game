@@ -3,13 +3,11 @@ require 'drug_game/player'
 require File.join(File.dirname(__FILE__), 'spec_helper')
 
 describe DrugGame::Player do
-  before(:each) do
-    @player = DrugGame::Player.new($window)
-  end
+  let(:player) { DrugGame::Player.new($window) }
 
   it "should have width and height" do
-    @player.width.should == 56
-    @player.height.should == 80
+    player.width.should == 56
+    player.height.should == 80
   end
 
   describe "awards" do
@@ -21,13 +19,13 @@ describe DrugGame::Player do
     end
 
     it "should collect award" do
-      @player.warp(40,40)
-      @player.collect_awards([@award]).should be_true
+      player.warp(40,40)
+      player.collect_awards([@award]).should be_true
     end
 
     it "should not collect awards" do
-      @player.warp(0,50)
-      @player.collect_awards([@award]).should be_false
+      player.warp(0,50)
+      player.collect_awards([@award]).should be_false
     end
   end
 
@@ -39,13 +37,13 @@ describe DrugGame::Player do
     end
 
     it "should touch monster" do
-      @player.warp(40,40)
-      @player.touch_monster([@monster]).should be_true
+      player.warp(40,40)
+      player.touch_monster([@monster]).should be_true
     end
 
     it "should not touch monster" do
-      @player.warp(0,50)
-      @player.touch_monster([@monster]).should be_false
+      player.warp(0,50)
+      player.touch_monster([@monster]).should be_false
     end
   end
 end
