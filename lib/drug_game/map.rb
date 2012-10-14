@@ -22,7 +22,7 @@ module DrugGame
     end
 
     def solid?(x, y, height)
-      y >= (window.height - 10 - (height / 2)) || self.platform?(x, y, (height))
+      y >= (window.height - 10 - ((height + 1) / 2)) || self.platform?(x, y, (height + 1))
     end
 
     def platform?(x, y, height)

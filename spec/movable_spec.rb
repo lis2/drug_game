@@ -23,7 +23,7 @@ describe DrugGame::Movable do
 
   it "should jump" do
     lambda {
-      movable.warp(50,664)
+      movable.warp(50,665)
       movable.jump
     }.should change(movable, :vy).by(-20)
   end
