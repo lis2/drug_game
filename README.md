@@ -14,4 +14,9 @@ Each award gives you additional points. You can earn:
 *  for wroclove     - 15 points
 *  for dci          - 1000 points
 
+## Installation ##
 
+[Install libgosu](https://github.com/jlnr/gosu/wiki)
+
+    $ bundle
+    $ bin/drug_game.rb
