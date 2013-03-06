@@ -37,6 +37,5 @@ module DrugGame
         end
       end
     end
-
   end
 end
